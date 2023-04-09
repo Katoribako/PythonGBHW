@@ -17,6 +17,6 @@ def element_sum(num, sum_el=float(0), summator=float(1), count=0):
 
 try:
     number = abs(int(input("Please input a number of elements ")))
-    summ = element_sum(number, sum_el=float(0), summator=float(1), count=0)
+    summ = element_sum(number)
 except ValueError:
     print("please input an integer number of elements")

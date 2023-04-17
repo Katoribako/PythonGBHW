@@ -10,16 +10,16 @@
 # Например: 20м*5000м*25кг*0.05м = 125000 кг = 125 т
 
 class Road():
-    weight_per_sm = 45
 
-    def __init__(self, asph_len, asph_width):
+    def __init__(self, asph_len, asph_width, weight_per_sm):
         self._asph_len = asph_len
         self._asph_width = asph_width
+        self._weight_per_sm = weight_per_sm
 
     def asph_weigth(self, thickness):
         return self._asph_len * self._asph_width * thickness \
-            * self.weight_per_sm
+            * self._weight_per_sm
 
 
-rd = Road(1500, 30)
+rd = Road(1500, 30, 25)
 print(f'weight of asphalt needed is {(rd.asph_weigth(20)) / 1000} T')

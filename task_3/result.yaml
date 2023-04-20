@@ -1,0 +1,10 @@
+"first_key":
+- "version 1"
+- "version 2"
+- "version 3"
+- "version 4"
+"second_key": !!int "5"
+"third_key":
+  "first_value": "1200⏬"
+  "second_value": "2000⏬"
+  "third_value": "3200⏬"

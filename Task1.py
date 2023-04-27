@@ -16,15 +16,21 @@
 """
 
 
-def type_array_selector(lst):
-    print([(el, type(el)) for el in lst])
+def code_point_generator(array):
+    code_point_list = []
+    for el in array:
+        encode_value = el.encode("unicode_escape", "utf-8")
+        code_point_list.append(encode_value.decode("utf-8"))
+    return code_point_list
 
 
-word_array = ['разработка', 'сокет', 'декоратор']
-type_array_selector(word_array)
-unicode_word_array = [
-    '\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430',
-    '\u0441\u043e\u043a\u0435\u0442',
-    '\u0434\u0435\u043a\u043e\u0440\u0430\u0442\u043e\u0440'
-]
-type_array_selector(unicode_word_array)
+def result_printing(word_list, code_point_list):
+    for i in range(len(word_list)):
+        print(f'Слово "{word_list[i]}" - буквенный формат. \n Тип данных: '
+              f'{type(word_list[i])}')
+        print(f'{code_point_list[i]} - набор кодовых точек. \n Тип данных: '
+              f'{type(code_point_list[i])} ')
+
+
+words_list = ['разработка', 'сокет', 'декоратор']
+result_printing(words_list, code_point_generator(words_list))
